@@ -5,9 +5,9 @@ import { Route } from "react-router-dom";
 // import Login from "./components/Login";
 // import Stylists from "./components/Stylists";
 
-import AddStylist from "./components/AddStylist";
+// import AddStylist from "./components/AddStylist";
 // import UserSignUp from "./components/UserSignUp";
-// import StylistSignUp from "./components/StylistSignUp";
+import StylistSignUp from "./components/StylistSignUp";
 
 import "./App.css";
 // import { STYLIST_UPDATE_FAILURE } from "./actions";
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <AddStylist
+      <StylistSignUp
         stylist={stylist}
         setStylist={setStylist}
         addStylist={addStylist}
