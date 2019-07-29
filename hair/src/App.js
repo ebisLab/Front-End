@@ -31,6 +31,8 @@ function App() {
       email:'Alexis@gmail.com'
    },]
   );
+
+  //Add's stylist
   const addStylist = person => {
     setStylist([...stylist, person])
   }
@@ -38,9 +40,7 @@ function App() {
   return (
     <div className="App">
       <StylistSignUp
-        stylist={stylist}
-        setStylist={setStylist}
-        addStylist={addStylist}
+        submitStylist={addStylist}
       />
       {stylist.map((person, index )=> <StylistsMember key={index} person={person} />)}
       {/* <Route exact path="/" component={Login} />

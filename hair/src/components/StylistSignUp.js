@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 //path for localhost: http://localhost:3000/addstylist
 
 export default function StylistSignUp(props) {
-    const {setStylist} = props;
+    const { submitStylist } = props;
     const [newStylist, setNewStylist] = useState({name:" ", number:" ", email:" "})
 
     //change event"
@@ -21,15 +21,14 @@ export default function StylistSignUp(props) {
     //submit event
     function handleSubmit(event) {
         event.preventDefault();
-        setStylist(person => [...person, newStylist])
-        // submitStylist(newStylist)
+        submitStylist(newStylist)
         setNewStylist({name:" ", number:" ", email:" "})
 
         console.log('name', newStylist);
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={ handleSubmit }>
             {/* Name */}
             <div className="form-group">
                 <label>Name:</label>
@@ -66,7 +65,7 @@ export default function StylistSignUp(props) {
                     onChange={handleChange}
                 />
             </div>
-            <button type="submit" className="add-button">Add</button>
+            <button type="submit" className="add-button">Register</button>
         </form>
     )
 
