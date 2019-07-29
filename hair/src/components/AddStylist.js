@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 
 export default function AddStylist(props) {
+    const {submitStylist} = props
     const [newStylist, setNewStylist] = useState({name:" ", number:" ", email:" "})
 
     //change event"
@@ -18,8 +19,11 @@ export default function AddStylist(props) {
 
     //submit event
     function handleSubmit(event) {
-        event.preventDefualt();
+        event.preventDefault();
+        submitStylist(newStylist)
         setNewStylist({name:" ", number:" ", email:" "})
+
+        console.log('name', newStylist);
     }
 
     return (
