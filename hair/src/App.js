@@ -17,7 +17,7 @@ import StylistsMember from "./components/Stylists";
 
 function App() {
   //sets the stylist to
-  const [stylist, setStylist] = useState(
+  const [stylist, setStylist] = useState( {}
     [{
       id:1, 
       name:'Jade',
@@ -32,7 +32,7 @@ function App() {
    },]
   );
 
-  //Add's stylist
+  //Adds stylist to form on submission
   const addStylist = person => {
     setStylist([...stylist, person])
   }
@@ -42,7 +42,7 @@ function App() {
       <StylistSignUp
         submitStylist={addStylist}
       />
-      {stylist.map((person, index )=> <StylistsMember key={index} person={person} />)}
+      {/* {stylist.map((person, index )=> <StylistsMember key={index} person={person} />)} */}
       {/* <Route exact path="/" component={Login} />
       <PrivateRoute exact path="/stylists" component={Stylists} />
       <PrivateRoute exact path="/addstylist" component={AddStylist} />

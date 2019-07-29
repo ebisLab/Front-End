@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-//path for localhost: http://localhost:3000/addstylist
+//path for localhost : http://localhost:3000/addstylist
 
 export default function StylistSignUp(props) {
     const { submitStylist } = props;
