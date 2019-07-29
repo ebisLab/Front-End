@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 
+//path for localhost: http://localhost:3000/addstylist
 
 export default function AddStylist(props) {
-    const {submitStylist} = props
+    const {setStylist} = props;
     const [newStylist, setNewStylist] = useState({name:" ", number:" ", email:" "})
 
     //change event"
@@ -20,7 +21,8 @@ export default function AddStylist(props) {
     //submit event
     function handleSubmit(event) {
         event.preventDefault();
-        submitStylist(newStylist)
+        setStylist(person => [...person, newStylist])
+        // submitStylist(newStylist)
         setNewStylist({name:" ", number:" ", email:" "})
 
         console.log('name', newStylist);
@@ -44,7 +46,7 @@ export default function AddStylist(props) {
             <div className="form-group">
                 <label>Phone Number:</label>
                 <input
-                    type="text"
+                    
                     className="input"
                     name="number"
                     placeholder="Please enter your number"
@@ -56,7 +58,7 @@ export default function AddStylist(props) {
             <div className="form-group">
                 <label>Email:</label>
                 <input
-                    type="text"
+                    type="email"
                     className="input"
                     name="email"
                     placeholder="Please enter your email"
