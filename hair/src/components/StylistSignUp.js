@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 export default function StylistSignUp(props) {
     console.log(props)//checking to see what is being transferred from App.js
     const { submitStylist, initialStylist, buttonText, history } = props;
-    const [newStylist, setNewStylist] = useState(initialStylist || {name:" ", number:" ", email:" "})
+    const [newStylist, setNewStylist] = useState(initialStylist || {name:" ", number:" ", email:" ", password:""})
 
     //change event"
     function handleChange(event) {
@@ -23,7 +23,7 @@ export default function StylistSignUp(props) {
     function handleSubmit(event) {
         event.preventDefault();//prevent default behavior
         submitStylist(newStylist)//submit new stylist
-        setNewStylist({name:" ", number:" ", email:" "})//Resets values to and clears form
+        setNewStylist({name:" ", number:" ", email:" ", password:""})//Resets values to and clears form
         history.push('/components/Stylists')
 
         console.log('name', newStylist);
@@ -66,6 +66,17 @@ export default function StylistSignUp(props) {
                         name="email"
                         placeholder="Please enter your email"
                         value={newStylist.email}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Password:</label>
+                    <input
+                        type="Password"
+                        className="input"
+                        name="password"
+                        placeholder="Password"
+                        value={newStylist.password}
                         onChange={handleChange}
                     />
                 </div>

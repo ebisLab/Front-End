@@ -3,17 +3,19 @@ import { Route, Link } from "react-router-dom";
 
 // import PrivateRoute from "./components/PrivateRoute";
 // import Login from "./components/Login";
-import Stylists from "./components/Stylists";
 
-// import AddStylist from "./components/AddStylist";
+
 // import UserSignUp from "./components/UserSignUp";
+
+//Stylist
 import StylistSignUp from "./components/StylistSignUp";
+import Stylists from "./components/Stylists";
+import Dashboard from "./components/Stylist Dashboard/Dashboard";
 
 import "./App.css";
 // import { STYLIST_UPDATE_FAILURE } from "./actions";
 
-//Erase before pull request
-import StylistsMember from "./components/Stylists";
+
 
 function App() {
   //sets the stylist to
@@ -42,7 +44,8 @@ function App() {
       <div className="nav-container">
           <Link className="navLinks" to="/">Login</Link> 
           <Link className="navLinks" to="/components/StylistSignUp">Register</Link>
-          <Link className="navLinks" to="/components/Stylists">Dashboard</Link>
+          <Link className="navLinks" to="/components/Dashboard">Dashboard</Link>
+          
       </div>
 
       <Route path="/components/StylistSignUp" 
@@ -50,6 +53,9 @@ function App() {
               submitStylist={addStylist}
               buttonText="Register"
             /> }/>
+
+      <Route path="/components/Dashboard"
+             component={Dashboard} />
       
       <Route path ="/components/Stylists" 
              render = {props => <Stylists {...props}
@@ -67,6 +73,7 @@ function App() {
                                      buttonText="Edit Profile"
                                      />;
              }}/>
+      
       
       {/* <Route exact path="/" component={Login} />
       <PrivateRoute exact path="/stylists" component={Stylists} />
