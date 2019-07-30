@@ -21,22 +21,50 @@ export default function Dashboard () {
         }
     ]);
 
+    //Add Post
+    const addPost = post => {
+        setStylistPost([...stylistPost, {...post, id:Date.now()}])
+    }
+
+    //Edit Posts
+    const editPost = editedPost => {
+        const stylistPostCopy = [...stylistPost]
+        const oldStylistPost = stylistPostCopy.find(post => post.id === editedPost.id);
+
+        Object.assign(oldStylistPost, editedPost)
+        setStylistPost(stylistPostCopy);
+    }
+
 
     return(
         <div>
             This is the Dashboard <br></br>
             Nav and header will go here <br></br>
-            {/* {stylistPost.map(post => <Posts post={post} />)} */}
+            {/* <Link to="/StylisPost">Dashboard</Link> */}
+            <Link to="/AddEditForm" >Add Post</Link>
 
             <Posts 
              stylistPost={stylistPost}
              setStylistPost={setStylistPost}
              />
+            
+            <Route path="/AddEditForm"
+                render={props => <AddEditForm {...props}
+                submitPost={addPost}
+                buttonText='Add Post'
 
-             <AddEditForm
-             stylistPost={stylistPost}
-             setStylistPost={setStylistPost}
-             />
+                    />}
+                />
+
+            <Route path="/postEdit/:id"
+                   render={props => {
+               const card = stylistPost.find(post => post.id.toString() === props.match.params.id);
+               return <AddEditForm {...props}
+                                     initialPost={card}
+                                     submitStylist={editPost}
+                                     buttonText="Edit Post"
+                                     />;
+             }}/>
              
              {/* {console.log("Dashboard",stylistPost)} */}
         </div>

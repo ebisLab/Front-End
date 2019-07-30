@@ -42,9 +42,9 @@ function App() {
     <div className="App">
       {/* Change below link to path to login page as home */}
       <div className="nav-container">
-          <Link className="navLinks" to="/">Login</Link> 
-          <Link className="navLinks" to="/components/StylistSignUp">Register</Link>
-          <Link className="navLinks" to="/components/Stylists">Stylist Listings</Link>
+          {/* <Link className="navLinks" to="/">Login</Link>  */}
+          {/* <Link className="navLinks" to="/components/StylistSignUp">Register</Link> */}
+          {/* <Link className="navLinks" to="/components/Stylists">Stylist Listings</Link> */}
           <Link className="navLinks" to="/components/Dashboard">Stylist Dashboard</Link>
           
       </div>
@@ -58,7 +58,7 @@ function App() {
       <Route path="/components/Dashboard"
              component={Dashboard} />
       
-      <Route path ="/components/Stylists" 
+      {/* <Route path ="/components/Stylists" 
              render = {props => <Stylists {...props}
              stylist={stylist}
              setStylist={setStylist}
@@ -73,14 +73,10 @@ function App() {
                                      submitStylist={editStylist}
                                      buttonText="Edit Profile"
                                      />;
-             }}/>
+             }}/> */}
       
       
-      {/* <Route exact path="/" component={Login} />
-      <PrivateRoute exact path="/stylists" component={Stylists} />
-      <PrivateRoute exact path="/addstylist" component={AddStylist} />
-      <PrivateRoute exact path="/newuser" component={UserSignUp} />
-      <PrivateRoute exact path="/newstylist" component={StylistSignUp} /> */}
+    
     </div>
   );
 }

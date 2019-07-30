@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 export default function Posts(props) {
-    // const {post} =props
-    console.log( 'StylistPosts',props)
     
     return (
         <div>
@@ -14,11 +12,11 @@ export default function Posts(props) {
                         <p>Image:{post.image}</p>
                         <p>Name:{post.name}</p>
                         <p>{post.description}</p>
+                        <Link to={`/postEdit/${post.id}`}>Edit</Link>
                         
                     </div>
                 )
                 })}
-            { console.log('Bottom of StylistPosts',props) }
         </div>
     )
 }
