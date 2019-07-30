@@ -39,7 +39,13 @@ function App() {
 
   //Edits Stylists
   const editStylist = editedStylist => {
-    
+    //create a copy of original array to mutate first before values are committed
+    const stylistCopy = [...stylist];
+    const oldStylist = stylistCopy.find(stylist => stylist.id === editedStylist.id);
+    console.log(editedStylist, oldStylist);
+
+    Object.assign(oldStylist, editedStylist);
+    setStylist(stylistCopy)
   }
 
   return (
