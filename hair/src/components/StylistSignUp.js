@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 //path for localhost : http://localhost:3000/addstylist
 
 export default function StylistSignUp(props) {
+    console.log(props)//checking to see what is being transferred from App.js
     const { submitStylist } = props;
     const [newStylist, setNewStylist] = useState({name:" ", number:" ", email:" "})
 
@@ -20,53 +21,56 @@ export default function StylistSignUp(props) {
 
     //submit event
     function handleSubmit(event) {
-        event.preventDefault();
-        submitStylist(newStylist)
-        setNewStylist({name:" ", number:" ", email:" "})
+        event.preventDefault();//prevent default behavior
+        submitStylist(newStylist)//submit new stylist
+        setNewStylist({name:" ", number:" ", email:" "})//Resets values to and clears form
 
         console.log('name', newStylist);
     }
 
     return (
-        <form onSubmit={ handleSubmit }>
-            {/* Name */}
-            <div className="form-group">
-                <label>Name:</label>
-                <input
-                    type="text"
-                    className="input"
-                    name="name"
-                    placeholder="Please enter your name"
-                    value={newStylist.name}
-                    onChange={handleChange}
-                />
-            </div>
-            {/* Phone Number */}
-            <div className="form-group">
-                <label>Phone Number:</label>
-                <input
-                    
-                    className="input"
-                    name="number"
-                    placeholder="Please enter your number"
-                    value={newStylist.number}
-                    onChange={handleChange}
-                />
-            </div>
-            {/* Email */}
-            <div className="form-group">
-                <label>Email:</label>
-                <input
-                    type="email"
-                    className="input"
-                    name="email"
-                    placeholder="Please enter your email"
-                    value={newStylist.email}
-                    onChange={handleChange}
-                />
-            </div>
-            <button type="submit" className="add-button">Register</button>
-        </form>
+        <div className="form-container">
+            <h2>Register</h2>
+            <form onSubmit={ handleSubmit }>
+                {/* Name */}
+                <div className="form-group">
+                    <label>Name:</label>
+                    <input
+                        type="text"
+                        className="input"
+                        name="name"
+                        placeholder="Please enter your name"
+                        value={newStylist.name}
+                        onChange={handleChange}
+                    />
+                </div>
+                {/* Phone Number */}
+                <div className="form-group">
+                    <label>Phone Number:</label>
+                    <input
+                        
+                        className="input"
+                        name="number"
+                        placeholder="Please enter your number"
+                        value={newStylist.number}
+                        onChange={handleChange}
+                    />
+                </div>
+                {/* Email */}
+                <div className="form-group">
+                    <label>Email:</label>
+                    <input
+                        type="email"
+                        className="input"
+                        name="email"
+                        placeholder="Please enter your email"
+                        value={newStylist.email}
+                        onChange={handleChange}
+                    />
+                </div>
+                <button type="submit" className="add-button">Register</button>
+            </form>
+        </div>
     )
 
 };

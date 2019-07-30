@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 // import PrivateRoute from "./components/PrivateRoute";
 // import Login from "./components/Login";
@@ -29,7 +29,7 @@ function App() {
       name:'Alexis',
       number: '888-369-8465',
       email:'Alexis@gmail.com'
-   },]
+   }]
   );
 
   //Adds stylist to form on submission
@@ -39,10 +39,14 @@ function App() {
 
   return (
     <div className="App">
-      <StylistSignUp
-        submitStylist={addStylist}
-      />
-      {/* {stylist.map((person, index )=> <StylistsMember key={index} person={person} />)} */}
+      {/* Change below link to path to login page as home */}
+      <Link to="/">Login</Link> 
+      <Link to="/components/StylistSignUp">Register</Link>
+      <Route path="/components/StylistSignUp" 
+             render={props => <StylistSignUp {...props}
+              submitStylist={addStylist}
+            /> }/>
+      
       {/* <Route exact path="/" component={Login} />
       <PrivateRoute exact path="/stylists" component={Stylists} />
       <PrivateRoute exact path="/addstylist" component={AddStylist} />
