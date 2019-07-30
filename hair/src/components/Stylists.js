@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //temporary
 
@@ -15,7 +16,9 @@ export default function StylistsMember(props) {
                   <p> Name:{person.name}</p>
                   <p> Number:{person.number}</p>
                   <p> Email:{person.email}</p>
+                  <Link to={`/edit/${person.id}`}>Edit</Link>
                </div>
+               
             )
          })}
          {console.log(props)}
