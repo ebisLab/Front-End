@@ -34,7 +34,8 @@ function App() {
 
   //Adds stylist to form on submission
   const addStylist = person => {
-    setStylist([...stylist, person])
+    setStylist([...stylist, {...person, id: Date.now()}])
+    //Date.now() is the value of id. This will generate a unique id for people we are adding using this function. This will be important for when we are editing and need to grab them.
   }
 
   //Edits Stylists
