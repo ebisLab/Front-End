@@ -2,7 +2,6 @@ import React, {useState}  from 'react';
 import { Route, Link } from "react-router-dom";
 
 import AddEditForm from "./AddEditForm";
-import Posts from "./StylistPosts";
 
 export default function Dashboard () {
 
@@ -43,10 +42,20 @@ export default function Dashboard () {
             {/* <Link to="/StylisPost">Dashboard</Link> */}
             <Link to="/AddEditForm" >Add Post</Link>
 
-            <Posts 
-             stylistPost={stylistPost}
-             setStylistPost={setStylistPost}
-             />
+            <div>
+            <h1>Posts</h1>
+            {stylistPost.map((post, index) => {
+                return (
+                    <div className='card' key={index}>
+                        <p>Image:{post.image}</p>
+                        <p>Name:{post.name}</p>
+                        <p>{post.description}</p>
+                        <Link to={`/postEdit/${post.id}`}>Edit</Link>
+                        
+                    </div>
+                )
+                })}
+        </div>
             
             <Route path="/AddEditForm"
                 render={props => <AddEditForm {...props}
@@ -66,7 +75,6 @@ export default function Dashboard () {
                                      />;
              }}/>
              
-             {/* {console.log("Dashboard",stylistPost)} */}
         </div>
     );
 }
