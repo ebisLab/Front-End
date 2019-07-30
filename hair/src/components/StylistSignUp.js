@@ -4,8 +4,8 @@ import React, {useState} from 'react';
 
 export default function StylistSignUp(props) {
     console.log(props)//checking to see what is being transferred from App.js
-    const { submitStylist } = props;
-    const [newStylist, setNewStylist] = useState({name:" ", number:" ", email:" "})
+    const { submitStylist, initialStylist } = props;
+    const [newStylist, setNewStylist] = useState(initialStylist || {name:" ", number:" ", email:" "})
 
     //change event"
     function handleChange(event) {

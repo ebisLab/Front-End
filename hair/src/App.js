@@ -37,6 +37,11 @@ function App() {
     setStylist([...stylist, person])
   }
 
+  //Edits Stylists
+  const editStylist = editedStylist => {
+    
+  }
+
   return (
     <div className="App">
       {/* Change below link to path to login page as home */}
@@ -54,6 +59,16 @@ function App() {
              stylist={stylist}
              setStylist={setStylist}
              />}/>
+
+      <Route path="/edit/:id"
+             render={props => {
+               console.log("Edit Route",props)
+               const person = stylist.find(stylist => stylist.id.toString() === props.match.params.id);
+               return <StylistSignUp {...props}
+                                     initialStylist={person}
+                                     submitStylist={editStylist}
+                                     />;
+             }}/>
       
       {/* <Route exact path="/" component={Login} />
       <PrivateRoute exact path="/stylists" component={Stylists} />
