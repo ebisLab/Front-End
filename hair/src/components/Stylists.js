@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 //This is Eunice's part. Putting in temporary data to make sure my components work.
 export default function StylistsMember(props) {
-   const {person} = props;
+   const {person, buttonText} = props;
 
    return (
       <div className="stylist-container">

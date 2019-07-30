@@ -42,10 +42,10 @@ function App() {
     //create a copy of original array to mutate first before values are committed
     const stylistCopy = [...stylist];
     const oldStylist = stylistCopy.find(stylist => stylist.id === editedStylist.id);
-    console.log(editedStylist, oldStylist);
+    // console.log(editedStylist, oldStylist);
 
     Object.assign(oldStylist, editedStylist);
-    setStylist(stylistCopy)
+    setStylist(stylistCopy);
   }
 
   return (
@@ -53,14 +53,15 @@ function App() {
       {/* Change below link to path to login page as home */}
       <Link to="/">Login</Link> 
       <Link to="/components/StylistSignUp">Register</Link>
-      <Link to="/components/Stylists.js">Dashboard</Link>
+      <Link to="/components/Stylists">Dashboard</Link>
 
       <Route path="/components/StylistSignUp" 
              render={props => <StylistSignUp {...props}
               submitStylist={addStylist}
+              buttonText="Register"
             /> }/>
       
-      <Route path ="/components/Stylists.js" 
+      <Route path ="/components/Stylists" 
              render = {props => <Stylists {...props}
              stylist={stylist}
              setStylist={setStylist}
@@ -68,11 +69,12 @@ function App() {
 
       <Route path="/edit/:id"
              render={props => {
-               console.log("Edit Route",props)
-               const person = stylist.find(stylist => stylist.id.toString() === props.match.params.id);
+              //  console.log("Edit Route",props)
+               const person = stylist.find(member => member.id.toString() === props.match.params.id);
                return <StylistSignUp {...props}
                                      initialStylist={person}
                                      submitStylist={editStylist}
+                                     buttonText="Edit Profile"
                                      />;
              }}/>
       

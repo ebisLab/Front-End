@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 
 export default function StylistSignUp(props) {
     console.log(props)//checking to see what is being transferred from App.js
-    const { submitStylist, initialStylist } = props;
+    const { submitStylist, initialStylist, buttonText, history } = props;
     const [newStylist, setNewStylist] = useState(initialStylist || {name:" ", number:" ", email:" "})
 
     //change event"
@@ -24,6 +24,7 @@ export default function StylistSignUp(props) {
         event.preventDefault();//prevent default behavior
         submitStylist(newStylist)//submit new stylist
         setNewStylist({name:" ", number:" ", email:" "})//Resets values to and clears form
+        history.push('/components/Stylists')
 
         console.log('name', newStylist);
     }
@@ -68,7 +69,7 @@ export default function StylistSignUp(props) {
                         onChange={handleChange}
                     />
                 </div>
-                <button type="submit" className="add-button">Register</button>
+                <button type="submit" className="submit-button">{buttonText}</button>
             </form>
         </div>
     )
