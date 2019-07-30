@@ -3,7 +3,7 @@ import { Route, Link } from "react-router-dom";
 
 // import PrivateRoute from "./components/PrivateRoute";
 // import Login from "./components/Login";
-// import Stylists from "./components/Stylists";
+import Stylists from "./components/Stylists";
 
 // import AddStylist from "./components/AddStylist";
 // import UserSignUp from "./components/UserSignUp";
@@ -17,7 +17,7 @@ import StylistsMember from "./components/Stylists";
 
 function App() {
   //sets the stylist to
-  const [stylist, setStylist] = useState( {}
+  const [stylist, setStylist] = useState( 
     [{
       id:1, 
       name:'Jade',
@@ -42,10 +42,18 @@ function App() {
       {/* Change below link to path to login page as home */}
       <Link to="/">Login</Link> 
       <Link to="/components/StylistSignUp">Register</Link>
+      <Link to="/components/Stylists.js">Dashboard</Link>
+
       <Route path="/components/StylistSignUp" 
              render={props => <StylistSignUp {...props}
               submitStylist={addStylist}
             /> }/>
+      
+      <Route path ="/components/Stylists.js" 
+             render = {props => <Stylists {...props}
+             stylist={stylist}
+             setStylist={setStylist}
+             />}/>
       
       {/* <Route exact path="/" component={Login} />
       <PrivateRoute exact path="/stylists" component={Stylists} />
