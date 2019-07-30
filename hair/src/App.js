@@ -44,7 +44,8 @@ function App() {
       <div className="nav-container">
           <Link className="navLinks" to="/">Login</Link> 
           <Link className="navLinks" to="/components/StylistSignUp">Register</Link>
-          <Link className="navLinks" to="/components/Dashboard">Dashboard</Link>
+          <Link className="navLinks" to="/components/Stylists">Stylist Listings</Link>
+          <Link className="navLinks" to="/components/Dashboard">Stylist Dashboard</Link>
           
       </div>
 

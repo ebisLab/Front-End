@@ -20,7 +20,7 @@ export default function StylistsMember(props) {
                
             )
          })}
-         {console.log(props)}
+         {console.log('bottom stylist',props)}
       </div>
    )
 }

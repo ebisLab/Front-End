@@ -1,43 +1,44 @@
-import React from 'react';
+import React, {useState}  from 'react';
 import { Route, Link } from "react-router-dom";
 
 import AddEditForm from "./AddEditForm";
-import StylistPosts from "./StylistPosts";
+import Posts from "./StylistPosts";
 
 export default function Dashboard () {
 
-    const [stylistPost, setStylistPost] =([
+    const [stylistPost, setStylistPost] = useState([
         {
             id:1,
-            image:
+            image: 'picture 1',
+            name: 'Image 1',
+            description: 'Picture description One'
+        },
+        {
+            id:2,
+            image: 'picture 2',
+            name: 'Image 2',
+            description: 'Picture description Two'
         }
     ]);
 
-    // //Add posts
-    // const addPost = post => {
-    //     setStylistPost([...stylistPost, {...post, id:Date.now()}
-    //     ])
-    // }
-
-    // //Edit Posts
-
-    // const editPost = editedPost => {
-    //     const postCopy = [...stylistPost];
-    //     const oldStylistPost = postCopy.find(post =>
-    //         post.id === editedPost.id);
-
-    //         Object.assign(oldStylistPost, editedPost )
-    //         setStylistPost(postCopy)
-    // }
 
     return(
         <div>
             This is the Dashboard <br></br>
-            Nav and header will go here
-            <StylistPosts 
+            Nav and header will go here <br></br>
+            {/* {stylistPost.map(post => <Posts post={post} />)} */}
+
+            <Posts 
              stylistPost={stylistPost}
              setStylistPost={setStylistPost}
              />
+
+             <AddEditForm
+             stylistPost={stylistPost}
+             setStylistPost={setStylistPost}
+             />
+             
+             {/* {console.log("Dashboard",stylistPost)} */}
         </div>
     );
 }
