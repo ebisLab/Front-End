@@ -1,5 +1,23 @@
 .App {
-  margin: 60px auto;
+  margin: 0px auto;
   width: 1000px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.stylist-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 

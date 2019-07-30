@@ -17,20 +17,7 @@ import StylistsMember from "./components/Stylists";
 
 function App() {
   //sets the stylist to
-  const [stylist, setStylist] = useState( 
-    [{
-      id:1, 
-      name:'Jade',
-      number: '456-123-3698',
-      email:'jade@gmail.com'
-   },
-   {
-      id:2, 
-      name:'Alexis',
-      number: '888-369-8465',
-      email:'Alexis@gmail.com'
-   }]
-  );
+  const [stylist, setStylist] = useState([]);
 
   //Adds stylist to form on submission
   const addStylist = person => {
@@ -52,9 +39,11 @@ function App() {
   return (
     <div className="App">
       {/* Change below link to path to login page as home */}
-      <Link to="/">Login</Link> 
-      <Link to="/components/StylistSignUp">Register</Link>
-      <Link to="/components/Stylists">Dashboard</Link>
+      <div className="nav-container">
+          <Link className="navLinks" to="/">Login</Link> 
+          <Link className="navLinks" to="/components/StylistSignUp">Register</Link>
+          <Link className="navLinks" to="/components/Stylists">Dashboard</Link>
+      </div>
 
       <Route path="/components/StylistSignUp" 
              render={props => <StylistSignUp {...props}
