@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 
 
 export default function AddEditForm (props) {
-    console.log("form", props)
+    
 
-    const {submitPost, initialPost, buttonText, history} = props
+    const {submitPost, initialPost, buttonText, history} = props;
     const [newPost, setNewPost] = useState(initialPost || { image:"", name:"", description:""})
 
+    // console.log("form", submitPost)
     //Change Event
     function handleChange(event) {
         const updatedPost = {...newPost, [event.target.name]: event.target.value};
@@ -25,14 +26,14 @@ export default function AddEditForm (props) {
         event.preventDefault();
         submitPost(newPost);
         setNewPost({ image:"", name:"", description:""})
-        history.push('/StylistPosts')
+        history.push('/components/Dashboard/StylistPosts')
     }
 
-
+    console.log("form", submitPost)
 
     return(
         <div>
-           <h2>Add</h2>
+           <h2>{buttonText}</h2>
            <form onSubmit={ handleSubmit }>
                {/* Placeholder for image */}
                <div className="form-group">
