@@ -43,17 +43,17 @@ function App() {
       {/* Change below link to path to login page as home */}
       <div className="nav-container">
           <Link className="navLinks" to="/">Login</Link> 
-          <Link className="navLinks" to="/components/StylistSignUp">Register</Link>
-          <Link className="navLinks" to="/components/Stylists">Stylist Listings</Link>
-          <Link className="navLinks" to="/components/Dashboard">Stylist Dashboard</Link>
+          {/* <Link className="navLinks" to="/components/StylistSignUp">Register</Link>
+          <Link className="navLinks" to="/components/Stylists">Stylist Listings</Link> */}
+          <Link className="navLinks" to="/components/Dashboard/StylistsPosts">Stylist Dashboard</Link>
           
       </div>
-      <Route path="/components/Dashboard"
+      <Route path="/components/Dashboard/StylistsPosts"
              component={Dashboard} />
 
-             
 
-      <Route path="/components/StylistSignUp" 
+
+      {/* <Route path="/components/StylistSignUp" 
              render={props => <StylistSignUp {...props}
               submitStylist={addStylist}
               buttonText="Register"
@@ -74,7 +74,7 @@ function App() {
                                      submitStylist={editStylist}
                                      buttonText="Edit Profile"
                                      />;
-             }}/>
+             }}/> */}
       
       
     

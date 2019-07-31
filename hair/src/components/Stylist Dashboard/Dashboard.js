@@ -4,7 +4,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import AddEditForm from "./AddEditForm";
 import StylistPosts from "./StylistsPosts"
 
-import { Container, Header } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 
 export default function Dashboard() {
 
@@ -98,7 +98,7 @@ console.log(addPost)
                         const card = stylistPost.find(post => post.id.toString() === props.match.params.id);
                         return <AddEditForm {...props}
                             initialPost={card}
-                            submitStylist={editPost}
+                            submitPost={editPost}
                             buttonText="Edit Post"
                         />;
                     }} />

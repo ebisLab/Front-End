@@ -7,7 +7,7 @@ export default function AddEditForm (props) {
 
     const {submitPost, initialPost, buttonText, history} = props;
     const [newPost, setNewPost] = useState(initialPost || { image:"", name:"", description:""})
-
+    console.log(props)
     // console.log("form", submitPost)
     //Change Event
     function handleChange(event) {
@@ -27,10 +27,11 @@ export default function AddEditForm (props) {
         event.preventDefault();
         submitPost(newPost);
         setNewPost({ image:"", name:"", description:""})
-        history.push('/components/Dashboard')
+        history.push('/components/Dashboard/StylistsPosts')
+        console.log("form", submitPost)
     }
 
-    console.log("form", submitPost)
+    // console.log("form", submitPost)
 
     return(
         <div>

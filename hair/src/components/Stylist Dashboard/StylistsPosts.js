@@ -8,7 +8,7 @@ export default function StylistPosts(props) {
 
     return (
         <div>
-            <h1>Posts</h1>
+            <h1>My Clients</h1>
             <div className="post-container">
                 <Card.Group itemsPerRow={4}>
                 {props.stylistPost.map((post, index) => {
