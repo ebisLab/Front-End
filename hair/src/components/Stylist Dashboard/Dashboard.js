@@ -4,7 +4,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import AddEditForm from "./AddEditForm";
 import StylistPosts from "./StylistsPosts"
 
-import { Container } from 'semantic-ui-react'
+import { Container, Button, Card, Image } from 'semantic-ui-react'
 
 export default function Dashboard() {
 
@@ -66,19 +66,20 @@ console.log(addPost)
 
     return (
         <div>
-            {/* <Link to="/StylisPost">Dashboard</Link> */}
+            
             <Container fluid>
 
             </Container>
             <div className="dashNav-container">
                 <Link to="/components/Dashboard/StylistsPosts">Dashboard</Link>
                 <Link to="/components/Dashboard/AddEditForm">Add Post</Link>
+                
             </div>
 
             <Switch>
 
 
-                <Route path="/components/Dashboard/AddEditForm"
+                <Route exact path="/components/Dashboard/AddEditForm"
                     render={props => <AddEditForm {...props}
                         submitPost={addPost}
                         buttonText='Add Post'
@@ -87,6 +88,7 @@ console.log(addPost)
 
                 <Route exact path="/components/Dashboard/StylistsPosts"
                     render={props => <StylistPosts {...props}
+                        submitPost={addPost}
                         stylistPost={stylistPost}
                         setStylistPost={setStylistPost}
                         buttonText="Edit Post"

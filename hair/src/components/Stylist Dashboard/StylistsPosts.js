@@ -1,10 +1,12 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
+
+import AddEditForm from "./AddEditForm";
 
 import { Button, Card, Image } from 'semantic-ui-react';
 
 export default function StylistPosts(props) {
-    const { buttonText } = props
+    const { submitPost, buttonText } = props
 
     return (
         <div>
@@ -30,6 +32,11 @@ export default function StylistPosts(props) {
                 })}
                 </Card.Group>
             </div>
+
+            <Route  exact path="./AddEditForm"
+                    component={AddEdditFrom}
+
+                    />} />
         </div>
     )
 }

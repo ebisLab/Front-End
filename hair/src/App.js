@@ -8,8 +8,8 @@ import { Route, Link } from "react-router-dom";
 // import UserSignUp from "./components/UserSignUp";
 
 //Stylist
-import StylistSignUp from "./components/StylistSignUp";
-import Stylists from "./components/Stylists";
+// import StylistSignUp from "./components/StylistSignUp";
+// import Stylists from "./components/Stylists";
 import Dashboard from "./components/Stylist Dashboard/Dashboard";
 
 import "./App.css";
@@ -46,10 +46,14 @@ function App() {
           {/* <Link className="navLinks" to="/components/StylistSignUp">Register</Link>
           <Link className="navLinks" to="/components/Stylists">Stylist Listings</Link> */}
           <Link className="navLinks" to="/components/Dashboard/StylistsPosts">Stylist Dashboard</Link>
+          {/* <Link className="navLinks" to="/components/Dashboard">Stylist Dashboard</Link> */}
           
       </div>
       <Route path="/components/Dashboard/StylistsPosts"
              component={Dashboard} />
+
+      {/* <Route path="/components/Dashboard"
+             component={Dashboard} /> */}
 
 
 
