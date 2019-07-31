@@ -21,3 +21,17 @@
   align-items: center;
 }
 
+.dashboard-container {
+  /* text-align: center; */
+  border: 2px solid blueviolet;
+
+}
+
+/* .dashNav-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+} */
+
+
+

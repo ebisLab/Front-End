@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
+import { Button, Form } from 'semantic-ui-react'
 
 
 export default function AddEditForm (props) {
-    
+    const sizes = ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive']
 
     const {submitPost, initialPost, buttonText, history} = props;
     const [newPost, setNewPost] = useState(initialPost || { image:"", name:"", description:""})
@@ -26,7 +27,7 @@ export default function AddEditForm (props) {
         event.preventDefault();
         submitPost(newPost);
         setNewPost({ image:"", name:"", description:""})
-        history.push('/components/Dashboard/StylistPosts')
+        history.push('/components/Dashboard')
     }
 
     console.log("form", submitPost)
@@ -34,9 +35,53 @@ export default function AddEditForm (props) {
     return(
         <div>
            <h2>{buttonText}</h2>
-           <form onSubmit={ handleSubmit }>
+           <Form onSubmit={ handleSubmit }>
+               <Form.Group >
+                   {/* Placeholder for image */}
+                   <Form.Input 
+                            width={8}
+                            fluid label= "Image"
+                            type="text"
+                            className="input"
+                            name="image"
+                            placeholder="Your image goes here"
+                            value={newPost.image}
+                            onChange={handleChange} 
+                            />
+               </Form.Group>
+               <Form.Group >
+                   {/* Placeholder for image */}
+                   <Form.Input 
+                            width={8}
+                            fluid label= "Name"
+                            type="text"
+                            className="input"
+                            name="name"
+                            placeholder="name"
+                            value={newPost.name}
+                            onChange={handleChange} 
+                            />
+               </Form.Group>
+               <Form.Group >
+                   {/* Placeholder for image */}
+                   <Form.Input 
+                            width={8}
+                            fluid label= "Description"
+                            type="text"
+                            className="input"
+                            name="description"
+                            placeholder="Description of Image"
+                            value={newPost.description}
+                            onChange={handleChange}
+                            />
+               </Form.Group>
+               <Button type="submit">{buttonText}</Button>
+           </Form>
+           {/* <button type="submit">{buttonText}</button> */}
+
+           {/* <form onSubmit={ handleSubmit }> */}
                {/* Placeholder for image */}
-               <div className="form-group">
+               {/* <div className="form-group">
                     <label>Image:</label>
                     <input
                         type="text"
@@ -46,9 +91,9 @@ export default function AddEditForm (props) {
                         value={newPost.image}
                         onChange={handleChange}
                     />
-                </div>
+                </div> */}
 
-               <div className="form-group">
+               {/* <div className="form-group">
                     <label>Name:</label>
                     <input
                         type="text"
@@ -71,7 +116,7 @@ export default function AddEditForm (props) {
                     />
                 </div>
                 <button type="submit">{buttonText}</button>
-           </form>
+           </form> */}
 
         </div>
     )

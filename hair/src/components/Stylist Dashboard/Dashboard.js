@@ -4,20 +4,46 @@ import { Route, Link, Switch } from "react-router-dom";
 import AddEditForm from "./AddEditForm";
 import StylistPosts from "./StylistsPosts"
 
+import { Container, Header } from 'semantic-ui-react'
+
 export default function Dashboard() {
 
     const [stylistPost, setStylistPost] = useState([
         {
             id: 1,
             image: 'picture 1',
-            name: 'Image 1',
-            description: 'Picture description One'
+            name: 'Jack',
+            description: 'Picture description '
         },
         {
             id: 2,
             image: 'picture 2',
-            name: 'Image 2',
-            description: 'Picture description Two'
+            name: 'Jill',
+            description: 'Picture description '
+        },
+        {
+            id: 3,
+            image: 'picture 3',
+            name: 'Holly',
+            description: 'Picture description'
+        },
+        {
+            id: 4,
+            image: 'picture 4',
+            name: 'Lisa',
+            description: 'Picture description '
+        },
+        {
+            id: 5,
+            image: 'picture 5',
+            name: 'Aaron',
+            description: 'Picture description '
+        },
+        {
+            id: 6,
+            image: 'picture 6',
+            name: 'Tina',
+            description: 'Picture description '
         }
     ]);
 
@@ -40,11 +66,14 @@ console.log(addPost)
 
     return (
         <div>
-            This is the Dashboard <br></br>
-            Nav and header will go here <br></br>
             {/* <Link to="/StylisPost">Dashboard</Link> */}
-            <Link to="/components/Dashboard/StylistsPosts">Dashboard</Link>
-            <Link to="/components/Dashboard/AddEditForm">Add Post</Link>
+            <Container fluid>
+
+            </Container>
+            <div className="dashNav-container">
+                <Link to="/components/Dashboard/StylistsPosts">Dashboard</Link>
+                <Link to="/components/Dashboard/AddEditForm">Add Post</Link>
+            </div>
 
             <Switch>
 
