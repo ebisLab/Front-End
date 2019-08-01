@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Container, PostCard, PostImage } from "./styled-components";
+import { Container, PostCard, PostImage, PostBody, Descript, BtnContainer } from "./styled-components";
 // import { Button, Card, Image } from 'semantic-ui-react';
 
 
@@ -17,13 +17,15 @@ export default function StylistPosts(props) {
                     return (
                         <PostCard  key={index}>
                             <PostImage></PostImage>
-                            <div className="post-content" >
-                                <h3>{post.name}</h3>
-                                <p>{post.description}</p>
-                            </div>
-                            <div className="post-button">
-                            <Link to={`/components/Dashboard/StylistsPosts/postEdit/${post.id}`} className="post-button">{buttonText}</Link>
-                            </div>
+                            <PostBody>
+                                <h2>{post.name}</h2>
+                                <Descript>{post.description}</Descript>
+                            </PostBody>
+                            <BtnContainer >
+                                <Link to={`/components/Dashboard/StylistsPosts/postEdit/${post.id}`} className='postButton'>
+                                {buttonText}
+                                </Link>
+                            </BtnContainer>
                         </PostCard>
                          )
                 })}

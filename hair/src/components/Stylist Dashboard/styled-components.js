@@ -23,14 +23,36 @@ export const Container = styled.div`
 `;
 
 export const PostCard = styled.div`
-    border: 1px lightgray solid;
+    box-shadow: -2px 7px 11px -3px rgba(173,173,173,.50);
     margin: 10px 20px 20px;
     width: 260px;
 `;
 
 export const PostImage = styled.div`
     background-color: #f1d4d4;
-    height: 200px;
+    height: 180px;
     width: 260px;
     box-sizing: border-box;
+`;
+
+export const PostBody = styled.div`
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    padding-left: 15px;
+`;
+
+export const Descript = styled.p`
+    color: grey;
+    font-size: 18px;
+`;
+
+export const BtnContainer = styled.div`
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 120px;
+    margin: 40px auto;
 `;

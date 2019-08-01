@@ -25,11 +25,20 @@
   color: #ac8daf;
 }
 
-.standInImage {
-  background-color: #484c7f;
-  height: 200px;
-  width: 260px;
-  box-sizing: border-box;
+.postButton {
+  background:#ac8daf;
+  background-image: linear-gradient(to bottom, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf);
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  box-shadow: -1px 1px 2px 1px rgba(138,138,138,1);
+  transition: ease-in-out 0.3s;
+}
+
+.postButton:hover {
+  background:#ac8daf;
+  color: #484c7f;
+  background-image: linear-gradient(to top, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf);
 }
 
 
