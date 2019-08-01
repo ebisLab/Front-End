@@ -9,29 +9,13 @@
 }
 
 
-.stylist-container {
-  display: flex;
-  justify-content: center;
+.link-color {
+  color: #484c7f;
+  transition: ease-in-out 0.3s;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.link-color:hover {
+  color: #ac8daf;
 }
-
-.dashboard-container {
-  /* text-align: center; */
-  border: 2px solid blueviolet;
-
-}
-
-/* .dashNav-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-} */
-
 
 

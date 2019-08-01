@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Route, Link, Switch } from "react-router-dom";
 
 import AddEditForm from "./AddEditForm";
-import StylistPosts from "./StylistsPosts"
+import StylistPosts from "./StylistsPosts";
 
-import { Container, Button, Card, Image } from 'semantic-ui-react'
+import {DashNav, DashLink} from "./styled-components";
+
+// import { Container, Button, Card, Image } from 'semantic-ui-react'
 
 export default function Dashboard() {
 
@@ -67,24 +69,27 @@ console.log(addPost)
     return (
         <div>
             
-            <Container fluid>
-
-            </Container>
-            <div className="dashNav-container">
-                <Link to="/components/Dashboard/StylistsPosts">Dashboard</Link>
-                <Link to="/components/Dashboard/AddEditForm">Add Post</Link>
-                
-            </div>
+            
+            <DashNav className="dashNav-container">
+                <DashLink>
+                    <Link className="link-color" to="/components/Dashboard/StylistsPosts">Dashboard</Link>
+                </DashLink>
+                <DashLink>
+                    <Link className="link-color" to="/components/Dashboard/AddEditForm ">Add Post</Link>
+                </DashLink>
+                {/* /components/Dashboard/AddEditForm */}
+            </DashNav>
 
             <Switch>
 
 
-                <Route exact path="/components/Dashboard/AddEditForm"
+                <Route path="/components/Dashboard/AddEditForm "
                     render={props => <AddEditForm {...props}
                         submitPost={addPost}
                         buttonText='Add Post'
 
                     />} />
+
 
                 <Route exact path="/components/Dashboard/StylistsPosts"
                     render={props => <StylistPosts {...props}

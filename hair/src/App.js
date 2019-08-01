@@ -43,45 +43,17 @@ function App() {
       {/* Change below link to path to login page as home */}
       <div className="nav-container">
           <Link className="navLinks" to="/">Login</Link> 
-          {/* <Link className="navLinks" to="/components/StylistSignUp">Register</Link>
-          <Link className="navLinks" to="/components/Stylists">Stylist Listings</Link> */}
-          <Link className="navLinks" to="/components/Dashboard/StylistsPosts">Stylist Dashboard</Link>
-          {/* <Link className="navLinks" to="/components/Dashboard">Stylist Dashboard</Link> */}
+          
+          {/* <Link className="navLinks" to="/components/Dashboard/StylistsPosts">Stylist Dashboard</Link> */}
+          <Link className="navLinks" to="/components/Dashboard">Stylist Dashboard</Link>
           
       </div>
-      <Route path="/components/Dashboard/StylistsPosts"
-             component={Dashboard} />
-
-      {/* <Route path="/components/Dashboard"
+      {/* <Route path="/components/Dashboard/StylistsPosts"
              component={Dashboard} /> */}
 
+      <Route path="/components/Dashboard"
+             component={Dashboard} />
 
-
-      {/* <Route path="/components/StylistSignUp" 
-             render={props => <StylistSignUp {...props}
-              submitStylist={addStylist}
-              buttonText="Register"
-            /> }/>
-
-      <Route path ="/components/Stylists" 
-             render = {props => <Stylists {...props}
-             stylist={stylist}
-             setStylist={setStylist}
-             />}/>
-
-      <Route path="/edit/:id"
-             render={props => {
-              //  console.log("Edit Route",props)
-               const person = stylist.find(member => member.id.toString() === props.match.params.id);
-               return <StylistSignUp {...props}
-                                     initialStylist={person}
-                                     submitStylist={editStylist}
-                                     buttonText="Edit Profile"
-                                     />;
-             }}/> */}
-      
-      
-    
     </div>
   );
 }
