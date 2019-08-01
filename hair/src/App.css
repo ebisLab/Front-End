@@ -6,6 +6,13 @@
 .nav-container {
   display: flex;
   justify-content: flex-end;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.navLinks {
+  margin: 0px 30px;
+  color: #484c7f;
 }
 
 
@@ -16,6 +23,13 @@
 
 .link-color:hover {
   color: #ac8daf;
+}
+
+.standInImage {
+  background-color: #484c7f;
+  height: 200px;
+  width: 260px;
+  box-sizing: border-box;
 }
 
 

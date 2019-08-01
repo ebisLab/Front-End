@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container } from "./styled-components";
+
+import { Container, PostCard, PostImage } from "./styled-components";
 // import { Button, Card, Image } from 'semantic-ui-react';
 
 
@@ -11,11 +12,11 @@ export default function StylistPosts(props) {
     return (
         <div>
             <h1>My Clients</h1>
-            <Container className="post-container">
+            <Container>
                 {props.stylistPost.map((post, index) => {
                     return (
-                        <div className="post-card" key={index}>
-                            <img></img>
+                        <PostCard  key={index}>
+                            <PostImage></PostImage>
                             <div className="post-content" >
                                 <h3>{post.name}</h3>
                                 <p>{post.description}</p>
@@ -23,7 +24,7 @@ export default function StylistPosts(props) {
                             <div className="post-button">
                             <Link to={`/components/Dashboard/StylistsPosts/postEdit/${post.id}`} className="post-button">{buttonText}</Link>
                             </div>
-                        </div>
+                        </PostCard>
                          )
                 })}
             </Container>

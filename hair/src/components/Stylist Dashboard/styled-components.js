@@ -8,13 +8,29 @@ export const DashNav = styled.nav`
 `;
 
 export const DashLink = styled.a`
-    font-size: 24px;
+    font-size: 20px;
     padding: 10px 0px ;
 `;
 
 export const Container = styled.div`
-    border: 2px blue solid;
-    display:flex;
-    flex: wrap;
-    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-top: 40px;
+    padding-top: 20px;
+
+`;
+
+export const PostCard = styled.div`
+    border: 1px lightgray solid;
+    margin: 10px 20px 20px;
+    width: 260px;
+`;
+
+export const PostImage = styled.div`
+    background-color: #f1d4d4;
+    height: 200px;
+    width: 260px;
+    box-sizing: border-box;
 `;

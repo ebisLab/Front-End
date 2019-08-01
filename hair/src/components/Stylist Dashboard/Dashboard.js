@@ -46,6 +46,24 @@ export default function Dashboard() {
             image: 'picture 6',
             name: 'Tina',
             description: 'Picture description '
+        },
+        {
+            id: 7,
+            image: 'picture 4',
+            name: 'Lisa',
+            description: 'Picture description '
+        },
+        {
+            id: 8,
+            image: 'picture 5',
+            name: 'Aaron',
+            description: 'Picture description '
+        },
+        {
+            id: 9,
+            image: 'picture 6',
+            name: 'Tina',
+            description: 'Picture description '
         }
     ]);
 
