@@ -19,20 +19,17 @@
 
 
 .link-color {
-  /* color: #484c7f; */
   color: white;
   transition: ease-in-out 0.3s;
 
 }
 
 .link-color:hover {
-  /* color: #ac8daf; */
   color: #fdc8b7;
 }
 
 .editPostButton {
   background:#ac8daf;
-  /* background-image: linear-gradient(to bottom, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf); */
   background-image: linear-gradient(to top, #540e33, #741743, #962051, #ba2a5f, #de356a);
   color: white;
   font-size: 20px;
@@ -45,7 +42,6 @@
 
 .postButton {
   background:#ac8daf;
-  /* background-image: linear-gradient(to bottom, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf); */
   background-image: linear-gradient(to top, #540e33, #741743, #962051, #ba2a5f, #de356a);
   color: white;
   font-size: 20px;
@@ -60,7 +56,6 @@
   /* background:#ac8daf; */
   background: #540e33;
   color: #fdc8b7;
-  /* background-image: linear-gradient(to top, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf); */
   background-image: linear-gradient(to bottom, #540e33, #741743, #962051, #ba2a5f, #de356a);
 }
 

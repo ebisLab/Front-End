@@ -6,8 +6,6 @@ import StylistPosts from "./StylistsPosts";
 
 import {DashNav, DashLink} from "./styled-components";
 
-// import { Container, Button, Card, Image } from 'semantic-ui-react'
-
 export default function Dashboard() {
 
     const [stylistPost, setStylistPost] = useState([
@@ -64,8 +62,6 @@ export default function Dashboard() {
     }
 
 
-
-
     const deletePost =id => {
         setStylistPost(stylistPost.filter(post => post.id !== id))
     }
@@ -82,7 +78,6 @@ export default function Dashboard() {
                 <DashLink>
                     <Link className="link-color" to="/components/Dashboard/StylistsPosts/AddEditForm ">Add Post</Link>
                 </DashLink>
-                {/* /components/Dashboard/AddEditForm */}
             </DashNav>
 
             <Switch>

@@ -76,50 +76,6 @@ export default function AddEditForm (props) {
                     <FormButton type="submit" >{buttonText}</FormButton>
             </PostForm>
            </FormContainer>
-           {/* <Form onSubmit={ handleSubmit }> */}
-               {/* <Form.Group > */}
-                   {/* Placeholder for image */}
-                   {/* <Form.Input 
-                            width={8}
-                            fluid label= "Image"
-                            type="text"
-                            className="input"
-                            name="image"
-                            placeholder="Your image goes here"
-                            value={newPost.image}
-                            onChange={handleChange} 
-                            /> */}
-               {/* </Form.Group> */}
-               {/* <Form.Group > */}
-                   {/* Placeholder for image */}
-                   {/* <Form.Input 
-                            width={8}
-                            fluid label= "Name"
-                            type="text"
-                            className="input"
-                            name="name"
-                            placeholder="name"
-                            value={newPost.name}
-                            onChange={handleChange} 
-                            /> */}
-               {/* </Form.Group>
-               <Form.Group > */}
-                   {/* Placeholder for image */}
-                   {/* <Form.Input 
-                            width={8}
-                            fluid label= "Description"
-                            type="text"
-                            className="input"
-                            name="description"
-                            placeholder="Description of Image"
-                            value={newPost.description}
-                            onChange={handleChange}
-                            />
-               </Form.Group>
-               <Button type="submit">{buttonText}</Button>
-           </Form> */}
-           {/* <button type="submit">{buttonText}</button> */}
-    
         </div>
     )
 }
