@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+export const LogoContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-top: 20px;
+`;
+
+export const Logo = styled.img`
+    width: 200px;
+    margin: 0 auto;
+`;
+
 export const DashNav = styled.nav`
     background: #ba2a5f;
     display: flex;
@@ -115,3 +128,8 @@ export const FormButton = styled.button`
   background-image: linear-gradient(to bottom, #540e33, #741743, #962051, #ba2a5f, #de356a);
   }
 `;
+
+
+
+
+

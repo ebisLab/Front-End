@@ -70,26 +70,6 @@ export default function Dashboard() {
         setStylistPost(stylistPost.filter(post => post.id !== id))
     }
 
-    // const postCopy = [...stylistPost]
-    //      postCopy.find(post => {
-    //         return post !== deletedPost.id
-    // setStylistPost(postCopy.slice(postCopy, deletedPost.id))
-
-    // const deletePost = deletedPost => {
-    //     const postCopy = [...stylistPost]
-    //     const oldPostCopy = postCopy.indexOf(deletedPost.target.value)
-    //     if(oldPostCopy !== -1) {
-    //         postCopy.splice(oldPostCopy, 1);
-    //         setStylistPost(deletePost)
-    //         console.log('deletePost', deletedPost);
-    //     }
-
-        
-
-    // }
-
-console.log(addPost)
-
 
     return (
         <div>
@@ -100,7 +80,7 @@ console.log(addPost)
                     <Link className="link-color" to="/components/Dashboard/StylistsPosts">Posts</Link>
                 </DashLink>
                 <DashLink>
-                    <Link className="link-color" to="/components/Dashboard/AddEditPost ">Add Post</Link>
+                    <Link className="link-color" to="/components/Dashboard/StylistsPosts/AddEditForm ">Add Post</Link>
                 </DashLink>
                 {/* /components/Dashboard/AddEditForm */}
             </DashNav>
@@ -108,7 +88,7 @@ console.log(addPost)
             <Switch>
 
 
-                <Route exact path="/components/Dashboard/AddEditPost "
+                <Route exact path="/components/Dashboard/StylistsPosts/AddEditForm "
                     render={props => <AddEditForm {...props}
                         submitPost={addPost}
                         buttonText='Add '
