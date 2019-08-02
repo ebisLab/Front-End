@@ -1,15 +1,7 @@
 import React, {useState} from "react";
 import { Route, Link } from "react-router-dom";
 
-// import PrivateRoute from "./components/PrivateRoute";
-// import Login from "./components/Login";
 
-
-// import UserSignUp from "./components/UserSignUp";
-
-//Stylist
-// import StylistSignUp from "./components/StylistSignUp";
-// import Stylists from "./components/Stylists";
 import Dashboard from "./components/Stylist Dashboard/Dashboard";
 
 import "./App.css";
@@ -48,10 +40,11 @@ function App() {
           <Link className="navLinks" to="/components/Dashboard">Stylist Dashboard</Link>
           
       </div>
+
       {/* <Route path="/components/Dashboard/StylistsPosts"
              component={Dashboard} /> */}
 
-      <Route path="/components/Dashboard"
+      <Route  path="/components/Dashboard"
              component={Dashboard} />
 
     </div>

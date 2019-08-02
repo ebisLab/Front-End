@@ -13,59 +13,41 @@ export default function Dashboard() {
     const [stylistPost, setStylistPost] = useState([
         {
             id: 1,
-            image: 'picture 1',
-            name: 'Jack',
-            description: 'Picture description '
-        },
-        {
+            image: "https://i.imgur.com/xtLBuaV.png",
+            name: "Trina",
+            description: "Cut & Color"
+          },
+          {
             id: 2,
-            image: 'picture 2',
-            name: 'Jill',
-            description: 'Picture description '
-        },
-        {
+            image: "https://i.imgur.com/4SbP5L9.png",
+            name: "Mallory",
+            description: "Color"
+          },
+          {
             id: 3,
-            image: 'picture 3',
-            name: 'Holly',
-            description: 'Picture description'
-        },
-        {
+            image: "https://i.imgur.com/Udfrvdr.png",
+            name: "Jason",
+            description: "Cut & Style"
+          },
+          {
             id: 4,
-            image: 'picture 4',
-            name: 'Lisa',
-            description: 'Picture description '
-        },
-        {
+            image: "https://i.imgur.com/pGTbbJQ.png",
+            name: "Trent",
+            description: "Cut & Style"
+          },
+          {
             id: 5,
-            image: 'picture 5',
-            name: 'Aaron',
-            description: 'Picture description '
-        },
-        {
+            image: "https://i.imgur.com/3DyC3X3.png",
+            name: "Liela",
+            description: "Color, Cut, & Style"
+          },
+          {
             id: 6,
-            image: 'picture 6',
-            name: 'Tina',
-            description: 'Picture description '
-        },
-        {
-            id: 7,
-            image: 'picture 4',
-            name: 'Lisa',
-            description: 'Picture description '
-        },
-        {
-            id: 8,
-            image: 'picture 5',
-            name: 'Aaron',
-            description: 'Picture description '
-        },
-        {
-            id: 9,
-            image: 'picture 6',
-            name: 'Tina',
-            description: 'Picture description '
-        }
-    ]);
+            image: "https://i.imgur.com/XRZuSP0.png",
+            name: "Jazmine",
+            description: "Cut, Press, & Style"
+          }
+        ]);
 
     //Add Post
     const addPost = post => {
@@ -81,6 +63,31 @@ export default function Dashboard() {
         setStylistPost(stylistPostCopy);
     }
 
+
+
+
+    const deletePost =id => {
+        setStylistPost(stylistPost.filter(post => post.id !== id))
+    }
+
+    // const postCopy = [...stylistPost]
+    //      postCopy.find(post => {
+    //         return post !== deletedPost.id
+    // setStylistPost(postCopy.slice(postCopy, deletedPost.id))
+
+    // const deletePost = deletedPost => {
+    //     const postCopy = [...stylistPost]
+    //     const oldPostCopy = postCopy.indexOf(deletedPost.target.value)
+    //     if(oldPostCopy !== -1) {
+    //         postCopy.splice(oldPostCopy, 1);
+    //         setStylistPost(deletePost)
+    //         console.log('deletePost', deletedPost);
+    //     }
+
+        
+
+    // }
+
 console.log(addPost)
 
 
@@ -90,10 +97,10 @@ console.log(addPost)
             
             <DashNav className="dashNav-container">
                 <DashLink>
-                    <Link className="link-color" to="/components/Dashboard/StylistsPosts">Dashboard</Link>
+                    <Link className="link-color" to="/components/Dashboard/StylistsPosts">Posts</Link>
                 </DashLink>
                 <DashLink>
-                    <Link className="link-color" to="/components/Dashboard/AddEditForm ">Add Post</Link>
+                    <Link className="link-color" to="/components/Dashboard/AddEditPost ">Add Post</Link>
                 </DashLink>
                 {/* /components/Dashboard/AddEditForm */}
             </DashNav>
@@ -101,10 +108,10 @@ console.log(addPost)
             <Switch>
 
 
-                <Route path="/components/Dashboard/AddEditForm "
+                <Route exact path="/components/Dashboard/AddEditPost "
                     render={props => <AddEditForm {...props}
                         submitPost={addPost}
-                        buttonText='Add Post'
+                        buttonText='Add '
 
                     />} />
 
@@ -114,7 +121,8 @@ console.log(addPost)
                         submitPost={addPost}
                         stylistPost={stylistPost}
                         setStylistPost={setStylistPost}
-                        buttonText="Edit Post"
+                        deletePost={deletePost}
+                        buttonText="Edit"
                     />} />
 
 
@@ -124,7 +132,7 @@ console.log(addPost)
                         return <AddEditForm {...props}
                             initialPost={card}
                             submitPost={editPost}
-                            buttonText="Edit Post"
+                            buttonText="Edit"
                         />;
                     }} />
             </Switch>

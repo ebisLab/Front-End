@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-// import { Button, Form } from 'semantic-ui-react'
+import { FormContainer, PostForm, PostLabel, PostInput, FormButton } from "./styled-components";
 
 
 
 export default function AddEditForm (props) {
-    const sizes = ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive']
 
     const {submitPost, initialPost, buttonText, history} = props;
     const [newPost, setNewPost] = useState(initialPost || { image:"", name:"", description:""})
@@ -36,7 +35,47 @@ export default function AddEditForm (props) {
 
     return(
         <div>
-           <h2>{buttonText}</h2>
+           <h2 className="postFormTitle">{buttonText}</h2>
+           <FormContainer >
+            <PostForm onSubmit={ handleSubmit } >
+                {/* Placeholder for image */}
+                <PostForm className="form-group">
+                        <PostLabel>Image:</PostLabel>
+                        <PostInput
+                            type="text"
+                            className="input"
+                            name="image"
+                            placeholder=" "
+                            value={newPost.image}
+                            onChange={handleChange}
+                        />
+                    </PostForm>
+
+                <PostForm className="form-group">
+                        <PostLabel>Name:</PostLabel>
+                        <PostInput
+                            type="text"
+                            className="input"
+                            name="name"
+                            placeholder="Please enter name"
+                            value={newPost.name}
+                            onChange={handleChange}
+                        />
+                    </PostForm>
+                    <PostForm className="form-group">
+                        <PostLabel>Description:</PostLabel>
+                        <PostInput
+                            type="text"
+                            className="input"
+                            name="description"
+                            placeholder="Please enter a description"
+                            value={newPost.description}
+                            onChange={handleChange}
+                        />
+                    </PostForm>
+                    <FormButton type="submit" >{buttonText}</FormButton>
+            </PostForm>
+           </FormContainer>
            {/* <Form onSubmit={ handleSubmit }> */}
                {/* <Form.Group > */}
                    {/* Placeholder for image */}
@@ -80,46 +119,7 @@ export default function AddEditForm (props) {
                <Button type="submit">{buttonText}</Button>
            </Form> */}
            {/* <button type="submit">{buttonText}</button> */}
-
-           <form onSubmit={ handleSubmit }>
-               {/* Placeholder for image */}
-               <div className="form-group">
-                    <label>Image:</label>
-                    <input
-                        type="text"
-                        className="input"
-                        name="image"
-                        placeholder="Please enter name"
-                        value={newPost.image}
-                        onChange={handleChange}
-                    />
-                </div>
-
-               <div className="form-group">
-                    <label>Name:</label>
-                    <input
-                        type="text"
-                        className="input"
-                        name="name"
-                        placeholder="Please enter name"
-                        value={newPost.name}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Description:</label>
-                    <input
-                        type="text"
-                        className="input"
-                        name="description"
-                        placeholder="Please enter name"
-                        value={newPost.description}
-                        onChange={handleChange}
-                    />
-                </div>
-                <button type="submit">{buttonText}</button>
-           </form>
-
+    
         </div>
     )
 }

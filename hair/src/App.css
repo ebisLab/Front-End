@@ -1,6 +1,7 @@
 .App {
   margin: 0px auto;
-  width: 1000px;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .nav-container {
@@ -12,33 +13,61 @@
 
 .navLinks {
   margin: 0px 30px;
-  color: #484c7f;
+  color: #032535;
+  
 }
 
 
 .link-color {
-  color: #484c7f;
+  /* color: #484c7f; */
+  color: white;
   transition: ease-in-out 0.3s;
+
 }
 
 .link-color:hover {
-  color: #ac8daf;
+  /* color: #ac8daf; */
+  color: #fdc8b7;
 }
 
-.postButton {
+.editPostButton {
   background:#ac8daf;
-  background-image: linear-gradient(to bottom, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf);
+  /* background-image: linear-gradient(to bottom, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf); */
+  background-image: linear-gradient(to top, #540e33, #741743, #962051, #ba2a5f, #de356a);
   color: white;
   font-size: 20px;
-  padding: 10px 20px;
+  padding: 5px 20px;
+  margin: 5px 15px;
+  border: none;
   box-shadow: -1px 1px 2px 1px rgba(138,138,138,1);
   transition: ease-in-out 0.3s;
 }
 
-.postButton:hover {
+.postButton {
   background:#ac8daf;
-  color: #484c7f;
-  background-image: linear-gradient(to top, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf);
+  /* background-image: linear-gradient(to bottom, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf); */
+  background-image: linear-gradient(to top, #540e33, #741743, #962051, #ba2a5f, #de356a);
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  margin: 5px 15px;
+  border: none;
+  box-shadow: -1px 1px 2px 1px rgba(138,138,138,1);
+  transition: ease-in-out 0.3s;
+}
+
+.postButton:hover, .editPostButton:hover {
+  /* background:#ac8daf; */
+  background: #540e33;
+  color: #fdc8b7;
+  /* background-image: linear-gradient(to top, #ddb6c6, #d2abc0, #c6a1ba, #b997b4, #ac8daf); */
+  background-image: linear-gradient(to bottom, #540e33, #741743, #962051, #ba2a5f, #de356a);
+}
+
+.postFormTitle {
+  /* Fix color */
+  color: #032535;
+    text-align: center;
 }
 
 
