@@ -4,15 +4,9 @@ import React, { useState } from "react";
 
 //CSS
 import styled, { css } from "styled-components";
-import {
-  FormContainer,
-  PostForm,
-  PostLabel,
-  PostInput,
-  FormButton
-} from "./styledComponents";
+import { FormContainer, PostForm, PostLabel, PostInput, FormButton } from "./styledComponents";
 
-export default function AddEditForm2(props) {
+export default function AddEditForm(props) {
   const { submitPost, initialPost, buttonText, history } = props;
   const [newPost, setNewPost] = useState(
     initialPost || { image: "", name: "", city: "", description: "" }
@@ -35,12 +29,12 @@ export default function AddEditForm2(props) {
     event.preventDefault();
     submitPost(newPost);
     setNewPost({ image: "", name: "", city: "", description: "" });
-    history.push("/Admin/StylistsPosts2");
+    history.push("/Homepage2");
   }
 
   return (
     <div>
-      <h2 className="postFormTitle">{buttonText}</h2>
+     <h2 className="postFormTitle">{buttonText}</h2>
       <FormContainer>
         <PostForm onSubmit={handleSubmit}>
           {/* Placeholder for image url */}
@@ -67,19 +61,6 @@ export default function AddEditForm2(props) {
               onChange={handleChange}
             />
           </PostForm>
-
-          <PostForm className="form-group">
-            <PostLabel>City:</PostLabel>
-            <PostInput
-              type="text"
-              className="input"
-              name="city"
-              placeholder="Please enter a city"
-              value={newPost.city}
-              onChange={handleChange}
-            />
-          </PostForm>
-
           <PostForm className="form-group">
             <PostLabel>Description:</PostLabel>
             <PostInput

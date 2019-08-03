@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import InsideStylistDetails from "../components/InsideStylistDetails";
 import { profiles } from "../components/data";
 import StarRatingComponent from "react-star-rating-component";
+import AddEditForm from "./AddEditPost3";
 
 //CSS //
 import styled, { css } from "styled-components";
@@ -31,6 +32,7 @@ function Homepage(props) {
           return <StylistDetails key={i} user={user} />;
         })}
       </div>
+
     </div>
   );
 }

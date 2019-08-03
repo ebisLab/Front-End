@@ -13,6 +13,7 @@ import SignUp from "./components/SignUp";
 import InsideStylistDetails from "./components/InsideStylistDetails";
 import InsideStylistDetails2 from "./components/InsideStylistDetails2";
 import Logout from "./components/Logout";
+import AddEditForm from "./components/AddEditPost3";
 
 //CSS
 import { LogoContainer, Logo } from "./components/styledComponents";
@@ -54,17 +55,15 @@ function App() {
         />
         <Route
           exact
-          path="/Homepage2/"
-          render={props => {
-            return (
-              <Homepage2 bringData={bringData} setBringData={setBringData} />
-            );
+          path="/Homepage2/" render={props => {
+            return ( <Homepage2 bringData={bringData} setBringData={setBringData} /> );
           }}
         />
-        {/* <Route exact path="/Dashboard/StylistsPosts" render={props => {
-            return ( <Dashboard bringData={bringData} setBringData={setBringData} /> );
-          }}
-        /> */}
+        
+        <Route exact path="/AddEditPost3" render={props => (
+            <AddEditForm {...props} buttonText="Add" />
+          )} 
+          />
       </div>
     </Router>
   );
