@@ -73,7 +73,14 @@ export const WrapDiv = styled.div`
     font-size: 0.9em;
   }
 `;
+export const Top = styled.div`
+text-align: center;
 
+.add{
+  background: SeaGreen;
+  color: white;
+}
+`;
 export const Wrap = styled.div`
 
   border-radius: 10px;

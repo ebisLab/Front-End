@@ -7,15 +7,7 @@ import StarRatingComponent from "react-star-rating-component";
 
 //CSS //
 import styled, { css } from "styled-components";
-import {
-  Button,
-  H1,
-  WrapDiv,
-  CropImg,
-  AlignLeft,
-  AlignRight,
-  Wrap
-} from "./styledComponents";
+import { Button, Top, H1, WrapDiv, CropImg, AlignLeft, AlignRight, Wrap } from "./styledComponents";
 
 function Homepage2(props) {
   console.log("props stylist", props);
@@ -24,8 +16,16 @@ function Homepage2(props) {
   return (
     <div>
 
-      <H1>STYLISTS' DASHBOARD</H1>
+      <H1>STYLISTS' DASHBOARD
+      </H1>
+      <Top>
+            <Button>Posts</Button>
+            <Button className="add">Add Post</Button>
+        </Top> 
+
+
       <div className="StyleContainer ">
+      
         {props.bringData.map((user, i) => {
           return <StylistDetails key={i} user={user} />;
         })}
@@ -38,6 +38,7 @@ function StylistDetails({ user }) {
   const { image, name, last, role, stars, location } = user;
   return (
     <Wrap>
+        
       <Link
         to={{
           pathname: `/stylistas/${user.id}`,
