@@ -6,10 +6,12 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Admin from "./components/Admin";
 import Homepage from "./components/Homepage";
+import Homepage2 from "./components/Homepage2";
 import { profiles } from "./components/data";
 import { profiles1 } from "./components/datainfo";
 import SignUp from "./components/SignUp";
 import InsideStylistDetails from "./components/InsideStylistDetails";
+import InsideStylistDetails2 from "./components/InsideStylistDetails2";
 import Logout from "./components/Logout";
 
 //CSS
@@ -35,6 +37,7 @@ function App() {
         <Route exact path="/logout" component={Logout} />
         <Route exact path="/signup" component={SignUp} />
         <Route path="/stylists/:id" component={InsideStylistDetails} />
+        <Route path="/stylistas/:id" component={InsideStylistDetails2} />
         
         <Route
           exact
@@ -47,6 +50,15 @@ function App() {
         />
         <Route path="/Admin/StylistsPosts2" render={props => {
             return ( <Admin exData={exData} setExData={setExData} /> );
+          }}
+        />
+        <Route
+          exact
+          path="/Homepage2/"
+          render={props => {
+            return (
+              <Homepage2 bringData={bringData} setBringData={setBringData} />
+            );
           }}
         />
         {/* <Route exact path="/Dashboard/StylistsPosts" render={props => {

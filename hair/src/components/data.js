@@ -290,6 +290,35 @@ const profiles = [
       "https://i.imgur.com/PmVHgFS.jpg"
     ],
     stars: 5.0
+  },
+  {
+    id: 10,
+    image: "https://i.imgur.com/DjNO3KI.jpg",
+    name: "Wedn",
+    last: "Add",
+    role: "Braider",
+    location: {
+      address: "0001 Cemetery Lane",
+      city: "Round Mountain",
+      state: "MN",
+      zip: 21014,
+      number: "317-444-444"
+    },
+    description: "I braid hair",
+    price: {
+      "DC Comic Baliage": 90,
+      "Curl and Cut": 85,
+      "The Pixie Do": 70,
+      "Hair exam Consultation": 20
+    },
+    portfolio: [
+      "https://i.imgur.com/ILgo4FN.jpg",
+      "https://i.imgur.com/0egAGWj.jpg",
+      "https://i.imgur.com/RPDgUMm.jpg",
+      "https://i.imgur.com/CQaZyta.jpg",
+      "https://i.imgur.com/PmVHgFS.jpg"
+    ],
+    stars: 3.2
   }
 ];
 //this is cool

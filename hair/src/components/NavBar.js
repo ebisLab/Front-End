@@ -11,6 +11,9 @@ export default function NavBar() {
         <NavLink to="/">Home</NavLink>
       </Spacing>
       <Spacing>
+        <NavLink to="/Homepage2/">Stylist Home</NavLink>
+      </Spacing>
+      <Spacing>
         <NavLink to="Admin/StylistsPosts2">Admin</NavLink>
       </Spacing>
       {/* <Spacing>

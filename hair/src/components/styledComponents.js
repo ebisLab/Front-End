@@ -75,13 +75,14 @@ export const WrapDiv = styled.div`
 `;
 
 export const Wrap = styled.div`
+
   border-radius: 10px;
   border: 1px solid #707070;
   margin: 40px;
   padding: 10px;
   height: 150px;
   box-shadow: 7px 10px #daccdb;
-  column-count: 2;
+  column-count: 3;
 
   a {
     text-decoration: none;
@@ -89,13 +90,35 @@ export const Wrap = styled.div`
   }
 
   .left {
-    width: 30%;
+    width: 60%;
+  }
+
+  .endbtn{
+    float: right;
+    width: 80px;
+ 
+    button {
+      width: 60px;
+      height: 40px;
+     border-radius: 10px;
+      border: none;
+      padding: 5px;
+      margin: 6px;
+      color: white;
+    }
+    .edit{
+      background: DodgerBlue;
+    }
+
+    .delete{
+      background: crimson;
+    }
   }
 
   .right {
-    width: 50%;
     text-align: left;
-    margin-left: -280px;
+    height: 125px;
+    margin-left: -110px;
 
     .stars {
       margin-top: 10px;
