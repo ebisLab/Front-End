@@ -5,7 +5,7 @@ import InsideStylistDetails from "../components/InsideStylistDetails";
 import { profiles } from "../components/data";
 import StarRatingComponent from "react-star-rating-component";
 
-//CSS
+//CSS //
 import styled, { css } from "styled-components";
 import {
   Button,

@@ -6,10 +6,14 @@ import { Route, Link, Switch } from "react-router-dom";
 import AddEditForm from "./AddEditPost";
 import StylistPosts from "./StylistsPosts";
 
-//CSS
+import { profiles } from "../components/data";
+import { profiles1 } from "../components/datainfo";
+
+//CSS ** this
 import { DashNav, DashLink } from "./styledComponents";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
+  
   const [stylistPost, setStylistPost] = useState([
     {
       id: 1,
@@ -48,6 +52,8 @@ export default function Dashboard() {
       description: "Cut, Press, & Style"
     }
   ]);
+
+  
 
   //Add Post
   const addPost = post => {
