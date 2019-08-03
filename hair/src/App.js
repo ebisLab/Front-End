@@ -60,7 +60,7 @@ function App() {
           }}
         />
         
-        <Route exact path="/AddEditPost3" render={props => (
+        <Route exact path="/Homepage2/AddEditPost3" render={props => (
             <AddEditForm {...props} buttonText="Add" />
           )} 
           />

@@ -31,7 +31,7 @@ export default function StylistPosts(props) {
                 <Descript>{post.description}</Descript>
               </PostBody>
               <BtnContainer>
-                <Link
+                <Link    
                   to={`/Dashboard/StylistsPosts/postEdit/${post.id}`}
                   className="editPostButton"
                 >

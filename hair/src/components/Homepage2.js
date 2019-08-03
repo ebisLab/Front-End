@@ -40,12 +40,11 @@ const deleteUser = id => {
 
       <Top>
       <Button>Posts</Button>
-      <Link to="/AddEditPost3" >
+      <Link to="/Homepage2/AddEditPost3" >
             <Button className="add">Add Post</Button>
         </Link>     
             {/* <AddEditForm {...props} submitPost={addPost} buttonText="Add" /> */}
         </Top> 
-        <AddEditForm />
             <Switch>
         
           </Switch>
