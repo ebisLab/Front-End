@@ -23,14 +23,35 @@ function Homepage2(props) {
     setLocalData([...localData, { ...post, id: Date.now() }]);
   };
 
-
+// Delete Post - Working
 const deleteUser = id => {
-    
     setEditing(!false)
-
     setLocalData(localData.filter(user => user.id !== id))
     console.log(id)
 }
+
+//Edit Post
+const handleEdit = e => {
+    setEditing(!editing)
+}
+
+const updateHandler = e => {
+    e.preventDefault()
+    console.log('update fire')
+    props.updateMember(localData);
+    setEditing(!editing)
+}
+
+ //Edit Posts
+//  const editPost = editedPost => {
+//     const stylistPostCopy = [...stylistPost];
+//     const oldStylistPost = stylistPostCopy.find(
+//       post => post.id === editedPost.id
+//     );
+
+//     Object.assign(oldStylistPost, editedPost);
+//     setStylistPost(stylistPostCopy);
+//   };
 
 
   return (
@@ -40,14 +61,12 @@ const deleteUser = id => {
 
       <Top>
       <Button>Posts</Button>
-      <Link to="/Homepage2/AddEditPost3" >
+      <Link to="/Homepage2/AddEditPost3"  >
             <Button className="add">Add Post</Button>
         </Link>     
-            {/* <AddEditForm {...props} submitPost={addPost} buttonText="Add" /> */}
+            <AddEditForm {...props} submitPost={addPost} buttonText="Add" />
         </Top> 
-            <Switch>
-        
-          </Switch>
+            
         
 
 
@@ -65,7 +84,9 @@ const deleteUser = id => {
 
 function StylistDetails(props) {
   const { user, deleteUser, localData, setLocalData } = props;
-  const {image, name, last, role, stars, location} = user;
+  const {image, name, last, city, role, stars, location} = user;
+
+//   console.log('location', location)
   return (
     <Wrap>
         
@@ -86,7 +107,7 @@ function StylistDetails(props) {
             {name} {last}{" "}
           </h2>
           <h3>{role}</h3>
-          <p className="city">{location.city}</p>
+          <p className="city">{location ? location.city: <span>Loading...</span>}</p>
           <p className="stars">
             <StarRatingComponent
               name="rate1"
@@ -100,15 +121,16 @@ function StylistDetails(props) {
       
       </Link>
       <div className="endbtn">
-          <button className="edit">Edit</button>
+      <Link    
+                  to={`/Homepage2/postEdit/${user.id}`}
+                >
+          <button className="edit">Edit</button></Link>
       <button className="delete" onClick={()=> deleteUser(user.id)} >Delete</button>
       </div>
      
     </Wrap>
   );
 }
-//onClick={()=>{console.log('Wast')}}
-//props.deleteUser(post.id)
-//console.log('The goal is to delete this', user)
+
 export default Homepage2;
 

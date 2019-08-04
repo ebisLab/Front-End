@@ -22,6 +22,7 @@ import "./App.scss";
 function App() {
   const [bringData, setBringData] = useState(profiles);
   const [exData, setExData] = useState(profiles1);
+  const { submitPost, initialPost, buttonText, history } = useState(profiles);
 
   return (
     <Router>
@@ -32,7 +33,6 @@ function App() {
 
         <NavBar />
         <PrivateRoute path="/Dashboard/StylistsPosts" component={Dashboard}/>
-        {/* <Route path="/Admin/StylistsPosts2" component={Admin}/> */}
         <Route exact path="/login" component={Login} />
         {/* <Route exact path="/admin" component={Admin} /> */}
         <Route exact path="/logout" component={Logout} />
@@ -64,6 +64,21 @@ function App() {
             <AddEditForm {...props} buttonText="Add" />
           )} 
           />
+
+{/* <Route
+          exact
+          path="/Homepage2"
+          render={props => (
+            <Homepage2
+              {...props}
+              stylistPost={stylistPost}
+              setStylistPost={setStylistPost}
+              deletePost={deletePost}
+              buttonText="Edit"
+            />
+          )}
+        /> */}
+
       </div>
     </Router>
   );

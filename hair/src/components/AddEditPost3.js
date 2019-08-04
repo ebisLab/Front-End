@@ -12,6 +12,7 @@ export default function AddEditForm(props) {
     initialPost || { image: "", name: "", city: "", description: "" }
   );
 
+
   //Change Event
   function handleChange(event) {
     const updatedPost = { ...newPost, [event.target.name]: event.target.value };
@@ -27,10 +28,15 @@ export default function AddEditForm(props) {
   //Submit Event
   function handleSubmit(event) {
     event.preventDefault();
-    submitPost(newPost);
-    setNewPost({ image: "", name: "", city: "", description: "" });
-    history.push("/Homepage2");
+console.log('Form submit props', props)
+// props.updateMember(newPost);
+
+submitPost(newPost);
+//  setNewPost({ image: "", name: "", city: "", description: "" });
+// history.push("/Homepage2");
   }
+
+
 
   return (
     <div>
@@ -69,6 +75,17 @@ export default function AddEditForm(props) {
               name="description"
               placeholder="Please enter a description"
               value={newPost.description}
+              onChange={handleChange}
+            />
+          </PostForm>
+          <PostForm className="form-group">
+            <PostLabel>City:</PostLabel>
+            <PostInput
+              type="text"
+              className="input"
+              name="city"
+              placeholder="Please enter name"
+              value={newPost.city}
               onChange={handleChange}
             />
           </PostForm>
