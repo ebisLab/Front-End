@@ -2,10 +2,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## EBI'S FILES TO PAY ATTENTION TO
 Pay attention to the following files. 
-App.js
-Homepage2.js
-AddEditPost3.js
-StylistsPosts3.js //Most likely not
+-App.js
+-Homepage2.js
+-AddEditPost3.js
+-StylistsPosts3.js //Most likely not
 
 ## Available Scripts
 
