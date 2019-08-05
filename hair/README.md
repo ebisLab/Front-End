@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## EBI'S FILES TO PAY ATTENTION TO
+Pay attention to the following files. 
+App.js
+Homepage2.js
+AddEditPost3.js
+StylistsPosts3.js //Most likely not
+
 ## Available Scripts
 
 In the project directory, you can run:
