@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 //CSS
 import styled, { css } from "styled-components";
-import { FormContainer, PostForm, PostLabel, PostInput, FormButton } from "./styledComponents";
+import { FormContainer2, PostForm2, PostLabel2, PostInput2, FormButton2 } from "./styledComponents";
 
 export default function AddEditForm(props) {
   const { submitPost, initialPost, buttonText, history } = props;
@@ -12,6 +12,7 @@ export default function AddEditForm(props) {
     initialPost || { image: "", name: "", role: "", last: "", location:"", stars: "" }
   );
 console.log('props bring data', props.bringData)
+console.log('newPost', newPost)
 
   //Change Event
   function handleChange(event) {
@@ -29,11 +30,11 @@ console.log('props bring data', props.bringData)
   function handleSubmit(event) {
     event.preventDefault();
 console.log('Form submit props', props)
-// props.updateMember(newPost);
-
+console.log('newpost', newPost)
+console.log('')
 submitPost(newPost);
-//  setNewPost({ image: "", name: "", city: "", description: "" });
-//history.push("/Homepage2");
+ setNewPost({ image: "", name: "", city: "", description: "" });
+history.push("/Homepage2");
   }
 
 
@@ -41,12 +42,12 @@ submitPost(newPost);
   return (
     <div>
      <h2 className="postFormTitle">{buttonText}</h2>
-      <FormContainer>
-        <PostForm onSubmit={handleSubmit}>
+      <FormContainer2>
+        <PostForm2 onSubmit={handleSubmit}>
           {/* Placeholder for image url */}
-          <PostForm className="form-group">
-            <PostLabel>Image:</PostLabel>
-            <PostInput
+          <PostForm2 className="form-group">
+            <PostLabel2>Image:</PostLabel2>
+            <PostInput2
               type="text"
               className="input"
               name="image"
@@ -55,11 +56,11 @@ submitPost(newPost);
               //https://i.imgur.com/foKD70t.jpg?1
               onChange={handleChange}
             />
-          </PostForm>
-
-          <PostForm className="form-group">
-            <PostLabel>Name:</PostLabel>
-            <PostInput
+          </PostForm2>
+<div className="2col">
+          <PostForm2 className="form-group">
+            <PostLabel2>Name:</PostLabel2>
+            <PostInput2
               type="text"
               className="input"
               name="name"
@@ -67,21 +68,11 @@ submitPost(newPost);
               value={newPost.name}
               onChange={handleChange}
             />
-          </PostForm>
-          <PostForm className="form-group">
-            <PostLabel>Role:</PostLabel>
-            <PostInput
-              type="text"
-              className="input"
-              name="role"
-              placeholder="Please enter a role/title"
-              value={newPost.role}
-              onChange={handleChange}
-            />
-          </PostForm>
-          <PostForm className="form-group">
-            <PostLabel>Last:</PostLabel>
-            <PostInput
+          </PostForm2>
+
+          <PostForm2 className="form-group">
+            <PostLabel2>Last:</PostLabel2>
+            <PostInput2
               type="text"
               className="input"
               name="last"
@@ -89,10 +80,23 @@ submitPost(newPost);
               value={newPost.last}
               onChange={handleChange}
             />
-          </PostForm>
-          <PostForm className="form-group">
-            <PostLabel>City:</PostLabel>
-            <PostInput
+          </PostForm2>
+</div>
+          <PostForm2 className="form-group">
+            <PostLabel2>Role:</PostLabel2>
+            <PostInput2
+              type="text"
+              className="input"
+              name="role"
+              placeholder="Please enter a role/title"
+              value={newPost.role}
+              onChange={handleChange}
+            />
+          </PostForm2>
+          <div className="2col">
+          <PostForm2 className="form-group">
+            <PostLabel2>City:</PostLabel2>
+            <PostInput2
               type="text"
               className="input"
               name="city"
@@ -100,11 +104,11 @@ submitPost(newPost);
               value={newPost.city}
               onChange={handleChange}
             />
-          </PostForm>
+          </PostForm2>
 
-          <PostForm >
-            <PostLabel>Stars:</PostLabel>
-            <PostInput
+          <PostForm2 >
+            <PostLabel2>Stars:</PostLabel2>
+            <PostInput2
               min="1" 
               max="5"
               type="number"
@@ -114,12 +118,13 @@ submitPost(newPost);
               value={newPost.stars}
               onChange={handleChange}
             />
-          </PostForm>
+          </PostForm2>
+          </div>
           
-          <FormButton type="submit">{buttonText}</FormButton>
-        </PostForm>
+          <FormButton2 type="submit">{buttonText}</FormButton2>
+        </PostForm2>
         
-      </FormContainer>
+      </FormContainer2>
     </div>
   );
 }

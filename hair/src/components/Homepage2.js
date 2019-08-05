@@ -38,7 +38,7 @@ const handleEdit = e => {
 const updateHandler = e => {
     e.preventDefault()
     console.log('update fire')
-    props.updateMember(localData);
+    props.submitPost(localData);
     setEditing(!editing)
 }
 

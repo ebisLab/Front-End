@@ -413,3 +413,81 @@ export const FormButton = styled.button`
     color: #fdc8b7;
   }
 `;
+
+//Form Styling part 2
+
+export const FormContainer2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto 0;
+  padding-top: 20px;
+  max-width: 1000px;
+  width: 100%;
+
+  div{
+    display: inline-flex;
+    margin: 0 auto;
+  
+    input{
+      width: 20%;
+      width: 300px;
+    margin: 10px 20px 30px;
+    }
+
+    label{
+      margin-left: 20px;
+    }
+  }
+  
+`;
+
+export const PostForm2 = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+`;
+
+export const PostFormGroup2 = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const PostLabel2 = styled.label`
+  font-size: 25px;
+  margin-top: 10px;
+  font-weight: 600;
+`;
+
+export const PostInput2 = styled.input`
+  background: #ffdfd5;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  padding: 15px 20px;
+  margin: 10px 0;
+
+  .number{
+    background: red;
+  }
+`;
+
+export const FormButton2 = styled.button`
+  margin: 40px auto;
+  width: 120px;
+  background: #ac8daf;
+  border: none;
+  border-radius: 3px;
+  box-shadow: -1px 1px 2px 1px rgba(138, 138, 138, 1);
+  color: white;
+  font-size: 20px;
+  padding: 8px 10px;
+  transition: ease-in-out 0.3s;
+
+  &:hover {
+    background: #ac8daf;
+    color: #fdc8b7;
+  }
+`;

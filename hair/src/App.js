@@ -24,7 +24,7 @@ function App() {
   const [exData, setExData] = useState(profiles1);
   const { submitPost, initialPost, buttonText, history } = useState(profiles);
 
-  const [localData, setLocalData] = useState([...bringData]);
+  const [localData, setLocalData] = useState([...profiles]);
   const addPost = post => {
     setLocalData([...localData, { ...post, id: Date.now() }]);
   };
