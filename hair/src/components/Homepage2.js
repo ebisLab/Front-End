@@ -47,7 +47,7 @@ const updateHandler = e => {
 //     const stylistPostCopy = [...stylistPost];
 //     const oldStylistPost = stylistPostCopy.find(
 //       post => post.id === editedPost.id
-//     );
+//     ); //
 
 //     Object.assign(oldStylistPost, editedPost);
 //     setStylistPost(stylistPostCopy);
@@ -117,6 +117,7 @@ function StylistDetails(props) {
               value={stars}
             />
           </p>
+          
         </div>
       
       </Link>

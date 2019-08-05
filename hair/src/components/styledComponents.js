@@ -390,6 +390,10 @@ export const PostInput = styled.input`
   width: 100%;
   padding: 15px 20px;
   margin: 10px 0;
+
+  .number{
+    background: red;
+  }
 `;
 
 export const FormButton = styled.button`

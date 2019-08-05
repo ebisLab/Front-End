@@ -24,6 +24,11 @@ function App() {
   const [exData, setExData] = useState(profiles1);
   const { submitPost, initialPost, buttonText, history } = useState(profiles);
 
+  const [localData, setLocalData] = useState([...bringData]);
+  const addPost = post => {
+    setLocalData([...localData, { ...post, id: Date.now() }]);
+  };
+
   return (
     <Router>
       <div className="App">
@@ -61,7 +66,7 @@ function App() {
         />
         
         <Route exact path="/Homepage2/AddEditPost3" render={props => (
-            <AddEditForm {...props} buttonText="Add" />
+            <AddEditForm {...props} submitPost={addPost} buttonText="Add" />
           )} 
           />
 

@@ -9,9 +9,9 @@ import { FormContainer, PostForm, PostLabel, PostInput, FormButton } from "./sty
 export default function AddEditForm(props) {
   const { submitPost, initialPost, buttonText, history } = props;
   const [newPost, setNewPost] = useState(
-    initialPost || { image: "", name: "", city: "", description: "" }
+    initialPost || { image: "", name: "", role: "", last: "", location:"", stars: "" }
   );
-
+console.log('props bring data', props.bringData)
 
   //Change Event
   function handleChange(event) {
@@ -33,7 +33,7 @@ console.log('Form submit props', props)
 
 submitPost(newPost);
 //  setNewPost({ image: "", name: "", city: "", description: "" });
-// history.push("/Homepage2");
+//history.push("/Homepage2");
   }
 
 
@@ -52,6 +52,7 @@ submitPost(newPost);
               name="image"
               placeholder=" "
               value={newPost.image}
+              //https://i.imgur.com/foKD70t.jpg?1
               onChange={handleChange}
             />
           </PostForm>
@@ -68,13 +69,24 @@ submitPost(newPost);
             />
           </PostForm>
           <PostForm className="form-group">
-            <PostLabel>Description:</PostLabel>
+            <PostLabel>Role:</PostLabel>
             <PostInput
               type="text"
               className="input"
-              name="description"
-              placeholder="Please enter a description"
-              value={newPost.description}
+              name="role"
+              placeholder="Please enter a role/title"
+              value={newPost.role}
+              onChange={handleChange}
+            />
+          </PostForm>
+          <PostForm className="form-group">
+            <PostLabel>Last:</PostLabel>
+            <PostInput
+              type="text"
+              className="input"
+              name="last"
+              placeholder="Please enter Last Name"
+              value={newPost.last}
               onChange={handleChange}
             />
           </PostForm>
@@ -84,13 +96,29 @@ submitPost(newPost);
               type="text"
               className="input"
               name="city"
-              placeholder="Please enter name"
+              placeholder="Please add a city"
               value={newPost.city}
               onChange={handleChange}
             />
           </PostForm>
+
+          <PostForm >
+            <PostLabel>Stars:</PostLabel>
+            <PostInput
+              min="1" 
+              max="5"
+              type="number"
+              className="number"
+              name="stars"
+              placeholder="Please add a number rating"
+              value={newPost.stars}
+              onChange={handleChange}
+            />
+          </PostForm>
+          
           <FormButton type="submit">{buttonText}</FormButton>
         </PostForm>
+        
       </FormContainer>
     </div>
   );
